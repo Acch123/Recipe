@@ -45,24 +45,6 @@ const titleInput = document.getElementById("title");
 const ingredientsInput = document.getElementById("ingredients");
 const instructionsInput = document.getElementById("instructions");
 
-recipeForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const newRecipe = {
-    title: titleInput.value,
-    ingredients: ingredientsInput.value,
-    instructions: instructionsInput.value
-  };
-
-  recipes.push(newRecipe);
-  displayRecipes();
-  
-  // Clear the form inputs
-  titleInput.value = "";
-  ingredientsInput.value = "";
-  instructionsInput.value = "";
-});
-
 function displayRecipes() {
   recipesContainer.innerHTML = ""; // Clear the existing recipes
 
@@ -89,5 +71,25 @@ function displayRecipes() {
     recipesContainer.appendChild(recipeBlock);
   });
 }
+
+recipeForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const newRecipe = {
+    title: titleInput.value,
+    ingredients: ingredientsInput.value,
+    instructions: instructionsInput.value
+  };
+
+  recipes.push(newRecipe);
+  displayRecipes();
+  
+  // Clear the form inputs
+  titleInput.value = "";
+  ingredientsInput.value = "";
+  instructionsInput.value = "";
+});
+
+
 
 displayRecipes(); // Display recipes when the page loads
