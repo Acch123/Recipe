@@ -1,7 +1,7 @@
 # Recipe Logger
 
 ## Team: The Hardest Geezers
-### Creators: Angus Chan, Sharan Velambath
+#### Creators: Angus Chan, Sharan Velambath
 
 ## Introduction
 This is a recipe app which allows users to enter their recipe name, ingredients, and cooking method.

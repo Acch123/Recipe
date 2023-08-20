@@ -126,3 +126,37 @@ function searchRecipe() {
   var recipes = matchingRecipes;
   displayRecipes();
 }
+
+
+// This is just for backend reference, since we don't have an account for airtable.
+const apiKey = 'YOUR_AIRTABLE_API_KEY';
+const baseId = 'YOUR_BASE_ID';
+const tableName = 'Recipes';
+
+const createRecipe = async (recipeData) => {
+  const endpoint = `https://api.airtable.com/v0/${baseId}/${tableName}`;
+  const headers = {
+    Authorization: `Bearer ${apiKey}`,
+    'Content-Type': 'application/json',
+  };
+
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({ fields: recipeData }),
+  });
+
+  if (response.ok) {
+    console.log('Recipe added successfully');
+  } else {
+    console.error('Error adding recipe');
+  }
+};
+
+const newRecipeData = {
+  Title: 'Pasta Carbonara',
+  Ingredients: 'Spaghetti, eggs, bacon, parmesan cheese, black pepper',
+  Instructions: 'Cook spaghetti. Mix eggs, cheese, and black pepper. Cook bacon. Combine everything and serve.',
+};
+
+createRecipe(newRecipeData);
