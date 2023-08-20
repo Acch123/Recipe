@@ -46,7 +46,7 @@ const ingredientsInput = document.getElementById("ingredients");
 const instructionsInput = document.getElementById("instructions");
 
 function displayRecipes() {
-  recipesContainer.innerHTML = ""; // Clear the existing recipes
+ recipesContainer.innerHTML = "";
 
   recipes.forEach(recipe => {
     const recipeBlock = document.createElement("div");
