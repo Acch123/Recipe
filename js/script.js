@@ -122,6 +122,7 @@ function searchRecipe() {
   const matchingRecipes = recipes.filter(recipe => {
     return recipe.title.toLowerCase().includes(searchTerm);
   });
-
-  displayRecipes(matchingRecipes);
+  
+  var recipes = matchingRecipes;
+  displayRecipes();
 }
